@@ -7,7 +7,7 @@ import { signIn, signOut } from '../actions';
      componentDidMount() {
          window.gapi.load('client:auth2', () =>{
              window.gapi.client.init({
-                 clientId: '701340556916-f91t40qe5g5k79guijr6ja7q9makdti6.apps.googleusercontent.com',
+                 clientId: process.env.clientId,
                  scope: 'email'
              }).then(()=>{
                  this.auth = window.gapi.auth2.getAuthInstance();
